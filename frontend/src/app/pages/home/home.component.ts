@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Iproduct } from './components/product-box/product-box.component';
+import { CostumesService } from 'src/app/services/costumes.service';
+import { ICostume } from './components/product-box/product-box.component';
 
 
 const ROWS_HEIGHT: {[id:number]: number} = { 1: 400, 3: 435, 4: 450 };
@@ -12,7 +13,8 @@ export class HomeComponent implements OnInit {
   cols = 3;
   rowHeight = ROWS_HEIGHT[this.cols];
   category: string | undefined;
-  products: Iproduct[] = [ {
+  costumes: ICostume[] = [];
+  /*products: any[] = [ {
       imageUrl: 'https://cdn.shopify.com/s/files/1/1789/1993/products/11_8daf3830-7ba0-4861-b152-f3c513fb486f.jpg?v=1671779070',
       tag: 'Genshin Impact',
       name: 'Layla Cosplay',
@@ -75,11 +77,15 @@ export class HomeComponent implements OnInit {
       rentalPrice: 100,
       depositPrice: 200,
     },
-  ]
+  ]*/
 
-  constructor() { }
+  constructor(private costumesService: CostumesService) { }
 
   ngOnInit(): void {
+    this.costumesService.getAll().then((costumes) => {
+      console.log(costumes);
+      this.costumes = costumes;
+    });
   }
 
   onColumnsCountChange(colsNum: number): void {

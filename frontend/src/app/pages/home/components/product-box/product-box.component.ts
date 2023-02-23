@@ -1,13 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-export interface Iproduct {
-  imageUrl: string
+export interface ICostume {
+  photo: string
   tag: string
   name: string 
   brand: string
   description: string 
-  rentalPrice: number 
-  depositPrice: number
+  rentalprice: number 
+  depositprice: number
 }
 
 @Component({
@@ -16,7 +16,7 @@ export interface Iproduct {
 })
 export class ProductBoxComponent implements OnInit {
   @Input() fullWidthMode = false;
-  @Input() product: Iproduct = {} as Iproduct;
+  @Input() costume: ICostume = {} as ICostume;
 
   constructor() { }
 

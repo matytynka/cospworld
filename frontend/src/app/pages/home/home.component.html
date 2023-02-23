@@ -11,8 +11,8 @@ class="min-h-full max-w-7xl mx-auto border-x"
             gutterSize="16"
             [cols]="cols"
             [rowHeight]="rowHeight">
-            <mat-grid-tile *ngFor="let product of products">
-                <app-product-box class="w-full" [fullWidthMode]="cols === 1" [product]="product"></app-product-box>
+            <mat-grid-tile *ngFor="let costume of costumes">
+                <app-product-box class="w-full" [fullWidthMode]="cols === 1" [costume]="costume"></app-product-box>
             </mat-grid-tile>
         </mat-grid-list>
     </mat-drawer-content>

@@ -2,20 +2,20 @@
     <div [ngClass]="{flex: fullWidthMode}">
         <img class="mb-1 mx-auto h-[200px]" 
             [ngClass]="{'h-200px': !fullWidthMode, 'h-[360px]': fullWidthMode}"
-            src={{product.imageUrl}}
+            src={{costume.photo}}
         />
         <div class="w-full"
             [ngClass]="{'px-8 flex flex-col justify-between': fullWidthMode}">
             <div>
-                <h5>{{product.tag}}</h5>
-                <p class="truncate hover:whitespace-normal">{{product.name}}</p>
-                <p>{{product.brand}}</p>
-                <p *ngIf="fullWidthMode">{{product.description}}</p>
+                <h5>{{costume.tag}}</h5>
+                <p class="truncate hover:whitespace-normal">{{costume.name}}</p>
+                <p>{{costume.brand}}</p>
+                <p *ngIf="fullWidthMode">{{costume.description}}</p>
             </div>
             <div class="flex justify-between">
                 <div>
-                    <p class="text-red-400" style="margin:0">Wypożyczenie: {{ product.rentalPrice | currency:'PLN' }}</p>
-                    <p class="text-red-400">Kaucja: {{ product.depositPrice | currency:'PLN' }}</p>
+                    <p class="text-red-400" style="margin:0">Wypożyczenie: {{ costume.rentalprice | currency:'PLN' }}</p>
+                    <p class="text-red-400">Kaucja: {{ costume.depositprice | currency:'PLN' }}</p>
                 </div>
                 <button>
                     <mat-icon>shopping_cart</mat-icon>
