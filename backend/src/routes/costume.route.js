@@ -1,15 +1,15 @@
-const express = require('express');
+import express from 'express';
+import costumeController from '../controllers/costume.controller.js';
 const router = express.Router();
-const costumeController = require('../controllers/costume.controller');
 
 /*GET*/
-router.get('/', costumeController.getAll);
-router.get('/:id', costumeController.getCostumeById);
+router.get('/', (req, res, next) => costumeController.getAll(req, res, next));
+router.get('/:id', (req, res, next) => costumeController.getCostumeById(req, res, next));
 /*POST*/
-router.post('/', costumeController.create);
+router.post('/', (req, res, next) => costumeController.create(req, res, next));
 /*PUT*/
-router.put('/:id', costumeController.update);
+router.put('/:id', (req, res, next) => costumeController.update(req, res, next));
 /*DELETE*/
-router.delete('/:id', costumeController.deleteById);
+router.delete('/:id', (req, res, next) => costumeController.deleteById(req, res, next));
 
-module.exports = router;
+export default router;

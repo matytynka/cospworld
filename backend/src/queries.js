@@ -1,12 +1,10 @@
-const Pool = require('pg').Pool
-const pool = new Pool({
+import pkg from 'pg';
+const { Pool } = pkg;
+
+export default new Pool({
     user: 'cospworld',
     host: 'localhost',
     database: 'cospworld',
     password: 'cospworld',
     port: 5432,
 });
-
-module.exports = {
-    pool,
-}

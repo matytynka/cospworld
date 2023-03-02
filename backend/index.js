@@ -1,6 +1,7 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const costumeRouter = require('./src/routes/costume.route');
+import express from 'express';
+import bodyParser from 'body-parser';
+import costumeRouter from './src/routes/costume.route.js';
+import userRouter from './src/routes/user.route.js';
 
 const app = express()
 const port = 3000
@@ -19,6 +20,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/costumes', costumeRouter);
+app.use('/users', userRouter)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
